@@ -30,6 +30,7 @@ function App() {
     // Calculate CGPA
     const totalCredits = semesterCredits.reduce((acc, credit) => acc + credit, 0);
     const totalScore = sgpas.reduce((acc, sgpa, index) => acc + (parseFloat(sgpa) || 0) * semesterCredits[index], 0);
+    const cgpaResult = (totalScore / totalCredits).toFixed(2);
     setCgpa(cgpaResult);
   };
 
